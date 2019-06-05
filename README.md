@@ -150,7 +150,13 @@ you can load files from the entire directory dynamically:
 
 When using Laravel Mix, you must add at least a few lines of configuration.
 
-Here's what Mati Mix will do for you *(`do not enter these codes in your configuration` - they are included automatically)*:
+&nbsp;
+
+> :warning: **Do not enter below codes** in your configuration *(they are included automatically)*.
+
+&nbsp;
+
+Here's what Mati Mix will do for you:
 
 #### • Disabling notification
 
@@ -251,7 +257,7 @@ How to use in SASS?
       processCssUrls: false,
     });
 
-See how many lines of the configuration code you save.
+See how many lines of the configuration code you save. You do not have to enter them manually because they are added automatically.
 
 [▲ Contents](#contents)
 
