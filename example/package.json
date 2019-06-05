@@ -1,0 +1,25 @@
+{
+  "name": "mati-mix-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.mix.js",
+  "author": "Mateusz Gbiorczyk",
+  "license": "MIT",
+  "scripts": {
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev": "npm run development",
+    "watch": "npm run development -- --watch",
+    "prod": "npm run production"
+  },
+  "browserslist": [
+    "chrome 60",
+    "firefox 55",
+    "safari 10",
+    "edge 15",
+    "ie 11"
+  ],
+  "devDependencies": {
+    "mati-mix": "^1.0.0"
+  }
+}
