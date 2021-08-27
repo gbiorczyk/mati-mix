@@ -13,8 +13,12 @@ module.exports = class Common {
 	}
 
 	setSourceMap() {
+		if ( this.mix.inProduction() ) {
+			return;
+		}
+
 		this.mix.webpackConfig( {
-			devtool: ! this.mix.inProduction() ? 'inline-source-map' : '',
+			devtool: 'inline-source-map',
 		} );
 	}
 
