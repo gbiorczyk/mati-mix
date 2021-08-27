@@ -1,0 +1,83 @@
+# Configuration for PhpStorm
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = tab
+indent_size = 4
+tab_width = 4
+ij_continuation_indent_size = 4
+
+[*.scss]
+ij_scss_enforce_quotes_on_format = true
+ij_scss_hex_color_long_format = true
+ij_scss_hex_color_lower_case = true
+
+[{*.cjs,*.js}]
+ij_javascript_do_while_brace_force = always
+ij_javascript_if_brace_force = always
+ij_javascript_import_sort_module_name = true
+ij_javascript_reformat_c_style_comments = true
+ij_javascript_space_after_unary_not = true
+ij_javascript_space_before_unary_not = true
+ij_javascript_spaces_within_array_initializer_brackets = true
+ij_javascript_spaces_within_brackets = true
+ij_javascript_spaces_within_catch_parentheses = true
+ij_javascript_spaces_within_for_parentheses = true
+ij_javascript_spaces_within_if_parentheses = true
+ij_javascript_spaces_within_imports = true
+ij_javascript_spaces_within_interpolation_expressions = true
+ij_javascript_spaces_within_method_call_parentheses = true
+ij_javascript_spaces_within_method_parentheses = true
+ij_javascript_spaces_within_object_literal_braces = true
+ij_javascript_spaces_within_parentheses = true
+ij_javascript_spaces_within_switch_parentheses = true
+ij_javascript_spaces_within_while_parentheses = true
+ij_javascript_while_brace_force = always
+
+[{*.ctp,*.hphp,*.inc,*.module,*.php,*.php4,*.php5,*.phtml}]
+ij_php_align_assignments = true
+ij_php_align_class_constants = true
+ij_php_align_key_value_pairs = true
+ij_php_align_phpdoc_comments = true
+ij_php_align_phpdoc_param_names = true
+ij_php_class_brace_style = end_of_line
+ij_php_comma_after_last_array_element = true
+ij_php_else_if_style = combine
+ij_php_force_short_declaration_array_style = true
+ij_php_getters_setters_naming_style = snake_case
+ij_php_if_brace_force = always
+ij_php_lower_case_boolean_const = true
+ij_php_lower_case_null_const = true
+ij_php_method_brace_style = end_of_line
+ij_php_phpdoc_blank_line_before_tags = true
+ij_php_phpdoc_blank_lines_around_parameters = true
+ij_php_phpdoc_keep_blank_lines = true
+ij_php_phpdoc_wrap_long_lines = true
+ij_php_space_after_type_cast = true
+ij_php_space_after_unary_not = true
+ij_php_space_before_unary_not = true
+ij_php_spaces_around_var_within_brackets = true
+ij_php_spaces_within_array_initializer_braces = true
+ij_php_spaces_within_catch_parentheses = true
+ij_php_spaces_within_for_parentheses = true
+ij_php_spaces_within_if_parentheses = true
+ij_php_spaces_within_method_call_parentheses = true
+ij_php_spaces_within_method_parentheses = true
+ij_php_spaces_within_parentheses = true
+ij_php_spaces_within_switch_parentheses = true
+ij_php_spaces_within_while_parentheses = true
+ij_php_ternary_operation_signs_on_next_line = true
+ij_php_variable_naming_style = snake_case
+
+[{*.htm,*.html,*.ng,*.sht,*.shtm,*.shtml}]
+ij_html_add_new_line_before_tags = div,p,a
+ij_html_align_attributes = false
+ij_html_do_not_indent_children_of_tags = html,thead,tbody,tfoot
+ij_html_new_line_after_last_attribute = when multiline
+ij_html_space_inside_empty_tag = true
+ij_html_uniform_ident = true

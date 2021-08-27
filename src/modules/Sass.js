@@ -1,61 +1,61 @@
-const path   = require('path');
-const mqSort = require('sort-css-media-queries');
+const path   = require( 'path' );
+const mqSort = require( 'sort-css-media-queries' );
 
-module.exports = class Sass
-{
-  constructor(mix)
-  {
-    this.mix = mix;
-  }
+module.exports = class Sass {
 
-  setGlobLoader()
-  {
-    this.mix.webpackConfig({
-      module: {
-        rules: [
-          {
-            test: /\.scss$/,
-            loader: 'import-glob-loader',
-          },
-        ],
-      },
-    });
-  }
+	constructor( mix ) {
+		this.mix = mix;
+	}
 
-  setPostCss(isDesktopFirst)
-  {
-    this.mix.options({
-      postCss: [
-        require('autoprefixer')({ cascade: false }),
-        require('css-mqpacker')({
-          sort: isDesktopFirst ? mqSort.desktopFirst : mqSort,
-        }),
-      ],
-    });
-  }
+	setGlobLoader() {
+		this.mix.webpackConfig( {
+			module: {
+				rules: [
+					{
+						test: /\.scss$/,
+						loader: 'import-glob-loader',
+					},
+				],
+			},
+		} );
+	}
 
-  setProcessUrls()
-  {
-    this.mix.options({
-      processCssUrls: false,
-    });
-  }
+	setPostCss( isDesktopFirst ) {
+		this.mix.options( {
+			postCss: [
+				require( 'autoprefixer' )( { cascade: false } ),
+				require( 'css-mqpacker' )( {
+					sort: isDesktopFirst ? mqSort.desktopFirst : mqSort,
+				} ),
+			],
+		} );
+	}
 
-  setWatcher(source)
-  {
-    if ((process.argv.indexOf('--watch') === -1) || !source || !fs.existsSync(source)) return;
+	setProcessUrls() {
+		this.mix.options( {
+			processCssUrls: false,
+		} );
+	}
 
-    /* ---
-      Call sass() re-compile after adding new scss file
-    --- */
+	/**
+	 * Call sass() re-compile after adding new scss file
+	 */
+	setWatcher( source ) {
+		if ( ( process.argv.indexOf( '--watch' ) === -1 ) || ! source || ! fs.existsSync( source ) ) {
+			return;
+		}
 
-    let isWatchDisabled = false;
-    fs.watch(path.dirname(source), () => {
-      if (isWatchDisabled) return;
-      isWatchDisabled = true;
-      fs.writeFile(source, fs.readFileSync(source), () => {
-        setTimeout(() => { isWatchDisabled = false; }, 0);
-      });
-    });
-  }
+		let isWatchDisabled = false;
+		fs.watch( path.dirname( source ), () => {
+			if ( isWatchDisabled ) {
+				return;
+			}
+			isWatchDisabled = true;
+			fs.writeFile( source, fs.readFileSync( source ), () => {
+				setTimeout( () => {
+					isWatchDisabled = false;
+				}, 0 );
+			} );
+		} );
+	}
 };

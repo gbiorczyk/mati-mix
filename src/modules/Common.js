@@ -1,59 +1,58 @@
-module.exports = class Common
-{
-  constructor(mix)
-  {
-    this.mix = mix;
-  }
+module.exports = class Common {
 
-  setNotifications()
-  {
-    this.mix.disableNotifications();
-  }
+	constructor( mix ) {
+		this.mix = mix;
+	}
 
-  setPublicPath()
-  {
-    this.mix.setPublicPath('/');
-  }
+	setNotifications() {
+		this.mix.disableNotifications();
+	}
 
-  setSourceMap()
-  {
-    this.mix.webpackConfig({
-      devtool: !this.mix.inProduction() ? 'inline-source-map' : '',
-    });
-  }
+	setPublicPath() {
+		this.mix.setPublicPath( '/' );
+	}
 
-  setVersion(isActive)
-  {
-    if (isActive) {
-      Mix.manifest.refresh = this.oldVersionRefresh;
-      this.mix.version();
-    } else {
-      this.oldVersionRefresh = Mix.manifest.refresh;
-      Mix.manifest.refresh = () => { void 0; };
-    }
-  }
+	setSourceMap() {
+		this.mix.webpackConfig( {
+			devtool: ! this.mix.inProduction() ? 'inline-source-map' : '',
+		} );
+	}
 
-  setAliases(list)
-  {
-    if (!list) return;
+	setVersion( isActive ) {
+		if ( isActive ) {
+			Mix.manifest.refresh = this.oldVersionRefresh;
+			this.mix.version();
+		} else {
+			this.oldVersionRefresh = Mix.manifest.refresh;
+			Mix.manifest.refresh   = () => {
+				void 0;
+			};
+		}
+	}
 
-    this.mix.webpackConfig({
-      resolve: {
-        extensions: ['.js', '.vue', '.json'],
-        alias: list,
-      },
-    });
-  }
+	setAliases( list ) {
+		if ( ! list ) {
+			return;
+		}
 
-  setBrowserSync(proxy, files)
-  {
-    if (!proxy) return;
+		this.mix.webpackConfig( {
+			resolve: {
+				extensions: [ '.js', '.vue', '.json' ],
+				alias: list,
+			},
+		} );
+	}
 
-    this.mix.browserSync({
-      port: 3000,
-      proxy,
-      open: false,
-      files,
-    });
-  }
+	setBrowserSync( proxy, files ) {
+		if ( ! proxy ) {
+			return;
+		}
+
+		this.mix.browserSync( {
+			port: 3000,
+			proxy,
+			open: false,
+			files,
+		} );
+	}
 };
