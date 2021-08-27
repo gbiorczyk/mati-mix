@@ -18,6 +18,6 @@
 		"ie 11"
 	],
 	"devDependencies": {
-		"mati-mix": "^2.0.2"
+		"mati-mix": "^2.1.0"
 	}
 }
