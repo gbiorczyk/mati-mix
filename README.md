@@ -105,11 +105,11 @@ By using the package you have access to the following functions of Laravel Mix:
 
 | Function                    | Information                                                   |
 |-----------------------------|---------------------------------------------------------------|
-| `mix.less(src, output);`    | [Docs](https://laravel.com/docs/master/mix#less)              |
-| `mix.sass(src, output);`    | [Docs](https://laravel.com/docs/master/mix#sass)              |
-| `mix.stylus(src, output);`  | [Docs](https://laravel.com/docs/master/mix#stylus)            |
-| `mix.js(src, output);`      | [Docs](https://laravel.com/docs/master/mix#vendor-extraction) |
-| `mix.scripts(src, output);` | [Docs](https://laravel.com/docs/master/mix#vanilla-js)        |
+| `mix.less( src, output );`    | [Docs](https://laravel.com/docs/master/mix#less)              |
+| `mix.sass( src, output );`    | [Docs](https://laravel.com/docs/master/mix#sass)              |
+| `mix.stylus( src, output );`  | [Docs](https://laravel.com/docs/master/mix#stylus)            |
+| `mix.js( src, output );`      | [Docs](https://laravel.com/docs/master/mix#vendor-extraction) |
+| `mix.scripts( src, output );` | [Docs](https://laravel.com/docs/master/mix#vanilla-js)        |
 
 As `src` parameter we give the path to the file or an array with paths *(it works only for methods where you can specify array of paths)*. It's the same as in Laravel Mix, but here **you can use globally file loading**, for example:
 
@@ -195,9 +195,9 @@ Here's what Mati Mix will do for you:
 
 	.browserSync( {
 		port: 3000,
-		proxy: ${proxy},
+		proxy,
 		open: false,
-		files: ${files},
+		files,
 	} );
 
 #### • Babel configuration based on [browserslist](https://github.com/browserslist/browserslist) from package.json
@@ -279,4 +279,4 @@ Thank you very much for this :heart: Thanks also to Jeffrey for [Laravel Mix](ht
 
 &nbsp;
 
-> © 2019 by [Mateusz Gbiorczyk](https://gbiorczyk.pl/). The MIT License.
+> © 2021 by [Mateusz Gbiorczyk](https://gbiorczyk.pl/). The MIT License.
