@@ -15,7 +15,7 @@ class Config {
 	}
 
 	initMethods() {
-		const list = [ 'less', 'sass', 'stylus', 'js', 'scripts' ];
+		const list = [ 'sass', 'js', 'scripts' ];
 		list.forEach( ( method ) => {
 			this[ method ] = ( src, output, options ) => {
 				if ( method === 'sass' ) {
@@ -24,6 +24,10 @@ class Config {
 				return this.mix[ method ]( this.parseSource( src ), output, options );
 			};
 		} );
+
+		this.webpackConfig = ( config ) => {
+			return this.mix.webpackConfig( config );
+		}
 	}
 
 	parseSource( sources ) {

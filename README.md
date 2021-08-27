@@ -103,13 +103,12 @@ That's all! The rest of the configuration is handled by Mati Mix :heart_eyes:
 
 By using the package you have access to the following functions of Laravel Mix:
 
-| Function                    | Information                                                   |
-|-----------------------------|---------------------------------------------------------------|
-| `mix.less( src, output );`    | [Docs](https://laravel.com/docs/master/mix#less)              |
-| `mix.sass( src, output );`    | [Docs](https://laravel.com/docs/master/mix#sass)              |
-| `mix.stylus( src, output );`  | [Docs](https://laravel.com/docs/master/mix#stylus)            |
-| `mix.js( src, output );`      | [Docs](https://laravel.com/docs/master/mix#vendor-extraction) |
-| `mix.scripts( src, output );` | [Docs](https://laravel.com/docs/master/mix#vanilla-js)        |
+| Function                       | Information                                                           |
+|--------------------------------|-----------------------------------------------------------------------|
+| `mix.sass( src, output );`     | [Docs](https://laravel.com/docs/6.x/mix#sass)                         |
+| `mix.js( src, output );`       | [Docs](https://laravel.com/docs/6.x/mix#working-with-scripts)         |
+| `mix.scripts( src, output );`  | [Docs](https://laravel.com/docs/6.x/mix#vanilla-js)                   |
+| `mix.webpackConfig( config );` | [Docs](https://laravel.com/docs/6.x/mix#custom-webpack-configuration) |
 
 As `src` parameter we give the path to the file or an array with paths *(it works only for methods where you can specify array of paths)*. It's the same as in Laravel Mix, but here **you can use globally file loading**, for example:
 
